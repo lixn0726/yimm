@@ -13,12 +13,6 @@ public interface Channel extends Endpoint {
 
     String id();
 
-    void connect(InetSocketAddress remote);
-
-    default void connect(String hostname, int port) {
-        connect(new InetSocketAddress(hostname, port));
-    }
-
     boolean isConnected();
 
     Serialization getSerialization();

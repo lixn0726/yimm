@@ -37,7 +37,6 @@ public class NettyClient extends BaseClient {
     }
 
     public void setUpBootstrap() {
-        // TODO 添加 bootstrap设置
         bootstrap.group(worker)
                 .channel(NioSocketChannel.class)
                 .option(ChannelOption.TCP_NODELAY, true)
