@@ -31,6 +31,8 @@ public class NettyChannel extends BaseChannel {
 
     private static final int MAX_RETRY = 3;
 
+//    private volatile boolean closed = true;
+
     public NettyChannel(Channel channel) {
         this.channel = channel;
     }
@@ -83,6 +85,14 @@ public class NettyChannel extends BaseChannel {
 
     @Override
     public void send(byte[] data) {
+        if (isClosed()) {
+            log.error("NettyChannel {} >>> 处于关闭状态，无法发送消息", id());
+            return;
+        }
+        if (!isConnected()) {
+            log.error("NettyChannel {} >>> 尚未连接上，无法发送消息", id());
+            return;
+        }
         // MARK：这里可以不用 encode了，直接 codec.encode即可
         ByteBuf buf = Unpooled.copiedBuffer(data);
         final ChannelFuture sendFuture = channel.writeAndFlush(buf.retain().duplicate());

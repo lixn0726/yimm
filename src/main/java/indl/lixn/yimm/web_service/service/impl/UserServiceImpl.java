@@ -27,8 +27,8 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserMapper userMapper;
 
-    @Resource
-    private UserInfoService userInfoService;
+//    @Resource
+//    private UserInfoService userInfoService;
 
     @Override
     public void addUser(User user) {
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         }
         // bcrypt加密
         user.setPassword(UserUtils.saltedPwd(user.getPassword()));
-        userInfoService.addUserInfo(buildInfo());
+//        userInfoService.addUserInfo(buildInfo());
         userMapper.addUser(user);
     }
 

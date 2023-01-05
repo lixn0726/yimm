@@ -7,6 +7,10 @@ package indl.lixn.yimm.protocol;
  **/
 public enum ProtocolType {
 
+    /*
+    外部协议类型
+     */
+
     HTTP,
     WebSocket,
     NONE

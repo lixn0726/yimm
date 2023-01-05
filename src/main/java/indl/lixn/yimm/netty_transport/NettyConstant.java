@@ -16,5 +16,8 @@ public interface NettyConstant {
 
     String LOCALHOST = "127.0.0.1";
 
+    byte CR = (byte)(13);
+
+    byte LF = (byte)(10);
 
 }
