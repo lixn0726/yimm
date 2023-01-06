@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import java.net.InetSocketAddress;
 
-import static indl.lixn.yimm.netty_transport.NettyConstant.RETRY_FREQUENCY;
+import static indl.lixn.yimm.netty_transport.constant.CommonConstant.RETRY_FREQUENCY;
 
 /**
  * @author lixn

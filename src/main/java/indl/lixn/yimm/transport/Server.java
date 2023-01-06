@@ -17,6 +17,15 @@ public interface Server extends Endpoint {
     void bind(InetSocketAddress bindAddress);
 
     /**
+     * 绑定端口
+     * @param address 地址
+     * @param port 端口
+     */
+    default void bind(String address, int port) {
+        bind(new InetSocketAddress(address, port));
+    }
+
+    /**
      * 获取所有活跃的channel
      * @return channel集合
      */

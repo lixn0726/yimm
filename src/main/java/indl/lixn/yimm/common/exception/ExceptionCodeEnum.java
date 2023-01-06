@@ -5,7 +5,7 @@ package indl.lixn.yimm.common.exception;
  * @description
  * @date 2023/01/04 20:42
  **/
-public enum ExceptionNodeEnum {
+public enum ExceptionCodeEnum {
 
 
 

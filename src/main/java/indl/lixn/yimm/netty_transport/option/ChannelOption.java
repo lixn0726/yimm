@@ -1,0 +1,39 @@
+package indl.lixn.yimm.netty_transport.option;
+
+/**
+ * @author lixn
+ * @description
+ * @date 2023/01/06 10:24
+ **/
+public enum ChannelOption {
+
+    /*
+    Netty Channel Options
+     */
+
+    SO_BROADCAST("SO_BROADCAST"),
+    SO_KEEPALIVE("SO_KEEPALIVE"),
+    SO_SNDBUF("SO_SNDBUF"),
+    SO_RCVBUF("SO_RCVBUF"),
+    SO_REUSEADDR("SO_REUSEADDR"),
+    SO_LINGER("SO_LINGER"),
+    SO_BACKLOG("SO_BACKLOG"),
+    SO_TIMEOUT("SO_TIMEOUT"),
+    IP_TOS("IP_TOS"),
+    IP_MULTICAST_ADDR("IP_MULTICAST_ADDR"),
+    IP_MULTICAST_IF("IP_MULTICAST_IF"),
+    IP_MULTICAST_TTL("IP_MULTICAST_TTL"),
+    IP_MULTICAST_LOOP_DISABLED("IP_MULTICAST_LOOP_DISABLED"),
+    TCP_NODELAY("TCP_NODELAY"),
+    TCP_FASTOPEN_CONNECT("TCP_FASTOPEN_CONNECT"),
+    DATAGRAM_CHANNEL_ACTIVE_ON_REGISTRATION("DATAGRAM_CHANNEL_ACTIVE_ON_REGISTRATION"),
+    SINGLE_EVENTEXECUTOR_PER_GROUP("SINGLE_EVENTEXECUTOR_PER_GROUP");
+
+    public String value;
+
+    ChannelOption(String value) {
+        this.value = value;
+    }
+
+
+}

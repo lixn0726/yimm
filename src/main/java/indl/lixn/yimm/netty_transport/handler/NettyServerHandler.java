@@ -43,10 +43,9 @@ public class NettyServerHandler extends ChannelDuplexHandler {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        // TODO 对于HTTP连接，个人感觉没有必要添加进来，但是在这里好像也判断不了
         log.info("NettyServerHandler" + (http ? "Http " : "WebSocket ") + " >>> 接收到新的请求");
-        // 传播了事件应该在逻辑走完之后还是在这之前，有什么区别？
         ctx.fireChannelRead(msg);
-        // 登记起来
         io.netty.channel.Channel channel = (io.netty.channel.Channel) msg;
         channels.put(channel.id().asShortText(), new NettyChannel(channel));
     }
